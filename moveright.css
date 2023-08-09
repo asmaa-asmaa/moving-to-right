@@ -1,0 +1,36 @@
+body {
+    background-color: #333;
+}
+.link {
+    color: #8bc34a;
+    text-decoration: none;
+    display: block;
+    border:2px solid #8bc34a;
+    margin: 20px auto;
+    position: relative;
+    width:160px;
+    height:40px;
+    text-align: center;
+    line-height: 36px;
+    overflow: hidden;
+}
+.link::before {
+    content: attr(data-text);
+    position: absolute;
+    color:#8bc34a;
+    width: 100%;
+    top:0;
+    left: 0;
+    transition: .5s;
+    transform: translateX(-100%);
+}
+.link span {
+    display: block;
+    transition: .5s;
+}
+.link:hover::before {
+    transform: translateX(0);
+}
+.link:hover span {
+    transform: translateX(100%);
+}
